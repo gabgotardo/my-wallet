@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// DEPENDENCIES 
+import * as React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-function App() {
+// GLOBAL STYLES 
+import GlobalStyles from './styles/globalStyles';
+
+// COMPONENTS 
+import Layout from './components/Layout';
+
+// THEMES
+import dark from './styles/themes/dark';
+// import light from './styles/themes/light';
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={dark}>
+      <GlobalStyles />
+      <Layout />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
